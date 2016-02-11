@@ -1,0 +1,39 @@
+= form_for(@event_application, url:confirm_event_applications_path) do |f|
+
+  - if @event_application.errors.any?
+    %ul
+      - @event_application.errors.full_messages.each do |message|
+        %li= message
+
+  %section
+    = f.label(:name, '氏名')
+    = f.text_field(:name, placeholder: '山田 太郎')
+
+  %section
+    = f.label(:name_ruby, 'ふりがな')
+    = f.text_field(:name_ruby, placeholder: 'やまだ たろう')
+
+  %section
+    = f.label(:gender, '性別')
+    %ul
+      %li
+        = f.radio_button(:gender, 1)
+        %label{for: 'event_application_gender_1'} 男性
+      %li
+        = f.radio_button(:gender, 2)
+        %label{for: 'event_application_gender_2'} 女性
+
+  %section
+    = f.label(:email, 'メールアドレス')
+    = f.text_field(:email, placeholder: 'example@example.com')
+
+  %section
+    = f.label(:phone, '電話番号')
+    = f.text_field(:phone, placeholder: '090-1234-5678')
+
+  %section
+    = f.label(:notes, '一言')
+    = f.text_area(:notes, placeholder: '一言')
+
+  %section
+    = f.submit('送信内容を確認')
