@@ -7,12 +7,18 @@ class EventApplicationsController < ApplicationController
 
   def confirm(event_application)
     @event_application = EventApplication.new(event_application)
-    unless @event_application.valid? && params['new'].blank?
+    unless @event_application.valid? && params['edit'].blank?
       render(:new)
     end
   end
 
-  def create
+	def create(event_application)
+    @event_application = EventApplication.new(event_application)
+    if @event_application.save
+      redirect_to(complete_event_applications_url)
+    else
+      render(:new)
+    end
   end
 
   def complete

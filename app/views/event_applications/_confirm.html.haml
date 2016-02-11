@@ -1,0 +1,31 @@
+%section
+  %string= t 'event_application.name'
+  = @event_application.name
+
+%section
+  %string= t 'event_application.name_ruby'
+  = @event_application.name_ruby
+
+%section
+  %string= t 'event_application.gender'
+  = @event_application.gender
+
+%section
+  %string= t 'event_application.email'
+  = @event_application.email
+
+%section
+  %string= t 'event_application.phone'
+  = @event_application.phone
+
+%section
+  %string= t 'event_application.notes'
+  = simple_format @event_application.notes
+
+= form_for @event_application do |f|
+  = render(partial: 'hidden_params', locals: { f: f })
+  = f.submit '送信する'
+
+= form_for(@event_application, url:confirm_event_applications_path(edit: 1)) do |f|
+  = render(partial: 'hidden_params', locals: { f: f })
+  = f.submit '修正する'
