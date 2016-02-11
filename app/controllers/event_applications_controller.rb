@@ -15,6 +15,7 @@ class EventApplicationsController < ApplicationController
 	def create(event_application)
     @event_application = EventApplication.new(event_application)
     if @event_application.save
+      EventApplicationMailer.notify_entry(@event_application).deliver_later
       redirect_to(complete_event_applications_url)
     else
       render(:new)
