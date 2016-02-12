@@ -17,7 +17,6 @@
 * テキスト（text）
 * ラジオボタン
 
-
 ```
 rails new application_42
 ```
@@ -31,3 +30,8 @@ rails g model EventApplication name:string name_ruby:string gender:boolean email
 設定の確認
 
 * http://localhost:3000/rails/info/routes
+
+## 課題
+
+* データの暗号化と確認機能
+* 電話番号のチェック
