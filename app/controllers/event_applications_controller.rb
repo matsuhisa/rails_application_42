@@ -1,6 +1,10 @@
 class EventApplicationsController < ApplicationController
   permits :name, :name_ruby, :gender, :email, :phone, :notes
 
+  def index
+    @event_applications = EventApplication.all
+  end
+
   def new
     @event_application = EventApplication.new(gender: EventApplication::FEMALE)
   end

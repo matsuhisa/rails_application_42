@@ -1,0 +1,6 @@
+%h1 申し込み一覧
+
+- if @event_applications.any?
+  %ul
+  - @event_applications.each do |entry|
+    %li= entry.name
