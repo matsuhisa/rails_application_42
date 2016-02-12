@@ -33,5 +33,7 @@ rails g model EventApplication name:string name_ruby:string gender:boolean email
 
 ## 課題
 
-* データの暗号化と確認機能
 * 電話番号のチェック
+ * - ありの時のチェック
+ * エラーメッセージ
+* Rails でのHTMLメールコーディング
