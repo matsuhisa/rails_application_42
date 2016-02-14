@@ -1,17 +1,14 @@
 ja:
-  event_application:
-    name: 氏名
-    name_ruby: ふりがな
-    gender: 性別
-    email: メールアドレス
-    phone: 電話番号
-    notes: 一言
   activerecord:
     attributes:
-      event_application:
+      event_application:: &event_application
         name: 氏名
         name_ruby: ふりがな
         gender: 性別
         email: メールアドレス
         phone: 電話番号
         notes: 一言
+  event_application:
+    <<: *event_application
+    male: 男性
+    female: 女性
