@@ -10,4 +10,6 @@ class EventApplication < ActiveRecord::Base
   validates :phone, presence: true, length: { maximum: 30 }
 
   serialize :name, EncryptionSerializer.new(SECRETS)
+
+  enum gender: { male: MALE, female: FEMALE }
 end
