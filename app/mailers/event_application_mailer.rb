@@ -7,7 +7,7 @@ class EventApplicationMailer < ActionMailer::Base
     mail(
       from: '運営 <example@example.com>',
       to: @envet_application.email,
-      subject: "ありがとうございます"
+      subject: "#{@envet_application.name}さん ありがとうございます"
     )
   end
 end
